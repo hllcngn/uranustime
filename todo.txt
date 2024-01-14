@@ -1,0 +1,4 @@
+project uranustime
+todo.txt
+
+. set windows coordinates and size to fit both libraries

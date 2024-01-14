@@ -5,17 +5,22 @@
 
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 
 #define _disp	((gx_env*)env)->disp
-#define _winid	((gx_env*)env)->winid
+#define _id	((gx_env*)env)->id
 #define _gc	((gx_env*)env)->gc
 #define _font	((gx_env*)env)->font
 
-typedef struct	gx_env{
+#define _wid	((gx_win*)win)->id
+
+typedef struct{
 	Display		*disp;
-	int		winid;
+	Window		id;
 	GC		gc;
-	XFontStruct	*font;
-}gx_env;
+	XFontStruct	*font;	}gx_env;
+
+typedef struct{
+	Window		id;	}gx_win;
 
 #endif

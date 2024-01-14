@@ -86,4 +86,4 @@ wmove(win, 3, 2);
 for (int i=1; i<width-2; i++){
 wprintw(win, "─");}
 wrefresh(win);
-return win;}
+return (void*)win;}
