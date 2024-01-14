@@ -1,11 +1,19 @@
 #include "g_hdr.h"
+#include <time.h>//time
+#include <stdlib.h>//srand
 
 int	main(int ac, char **av){
-void	*g_env = g_init();
+srand(time(NULL));
+void	*gx_env = gx_init();
 
-g_hello(g_env);
-void	*win1 = g_window(4, 8, 9, 40, "my_win");
+gx_hello(gx_env);
+gx_point(gx_env);
+gx_circle(gx_env);
+gx_ellipse(gx_env);
+gx_square_ellipse(gx_env);
 
-g_getch(g_env);
-g_end(g_env);
+void	*win1 = gx_window(8,4,40,9, "my_win");
+
+gx_getch(gx_env);
+gx_end(gx_env);
 return 0;}

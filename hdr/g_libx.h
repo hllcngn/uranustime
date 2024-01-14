@@ -3,15 +3,19 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-#define _disp	((g_env*)env)->disp
-#define _gc	((g_env*)env)->gc
-#define _winid	((g_env*)env)->winid
+#include <stdlib.h>
+#include <math.h>
 
-typedef struct	g_env{
-Display		*disp;
-int		winid;
-GC		gc;
-XFontStruct	*font;
-}g_env;
+#define _disp	((gx_env*)env)->disp
+#define _winid	((gx_env*)env)->winid
+#define _gc	((gx_env*)env)->gc
+#define _font	((gx_env*)env)->font
+
+typedef struct	gx_env{
+	Display		*disp;
+	int		winid;
+	GC		gc;
+	XFontStruct	*font;
+}gx_env;
 
 #endif

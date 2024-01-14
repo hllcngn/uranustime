@@ -1,25 +1,21 @@
 #ifndef G_HDR_H
 #define G_HDR_H
 
+typedef struct{ int x,y; }vect;
 
-//#define _USE_MATH_DEFINES
 
-typedef struct vect {
-	int y;
-	int x;
-} vect;
+void	*gx_init();
+void	gx_end(void *gx_env);
 
-void	*g_init();
-void	g_end(void *g_env);
+void	*gx_window(int x,int y,int w,int h, char *title);
 
-char	g_getch(void *g_env);
+char	gx_getch(void *gx_env);
 
-void	*g_window(int y, int x, int height, int width, char *title);
+void	gx_circle(void *gx_env);
+void	gx_point(void *gx_env);
+void	gx_ellipse(void *gx_env);
+void	gx_square_ellipse(void *gx_env);
 
-void	g_hello(void *g_env);
-void	g_circle(void *g_env);
-void	g_point(void *g_env);
-void	g_ellipse(void *g_env);
-void	g_square_ellipse(void *g_env);
+void	gx_hello(void *gx_env);
 
 #endif
