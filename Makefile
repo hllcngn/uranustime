@@ -1,6 +1,8 @@
-curses:
-	gcc -o ut_curses	src/main.c src/g_ncurses.c	-Isrc	-lncurses
+c:
+	gcc -ocut	src/main.c \
+			src/ncurses/g_ncurses.c		-Ihdr	-lncurses
 
 x:
 	#don't forget to export DISPLAY=:0.0
-	gcc -o ut_x		src/main.c src/g_libx.c		-Isrc	-lX11
+	gcc -oxut	src/main.c \
+			src/libx/g_libx.c		-Ihdr	-lX11
