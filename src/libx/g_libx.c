@@ -12,7 +12,6 @@ XSelectInput(_disp, _id, KeyPressMask | ExposureMask);
 _font = XLoadQueryFont(_disp, "9x15");
 XSetFont(_disp, _gc, _font->fid);
 return (void*)env;}
-
 void	gx_end(void *env){
 XCloseDisplay(_disp);
 free(env);	return;}
@@ -23,12 +22,13 @@ new->id = XCreateSimpleWindow(_disp, _id, x,y,w,h,
 		3,0x33777777,0x33777333);
 XMapWindow(_disp, new->id);
 return (void*)new;}
-
 void	gx_freewindow(void* win){
 free(win);	return;}
 
+
+
 char	gx_getch(void *env){
-XEvent		xe;
+XEvent	xe;
 while(1){
 	XNextEvent(_disp, &xe);
 	if (xe.type == KeyPress) return 0;}
@@ -60,8 +60,7 @@ void	gx_ellipse(void *env){
 int	half_minor_axis =100, half_major_axis =200;
 int	n = 2000;
 XPoint	*pts = (XPoint*)malloc(sizeof(XPoint)*n);
-float	t = 0;
-for (int i=0;i<n;i++){
+float	t = 0;	for (int i=0;i<n;i++){
 	pts[i].x = half_major_axis*cos(t) +400;
 	pts[i].y = half_minor_axis*sin(t) +400;
 	t+=2*M_PI/n;}
@@ -83,5 +82,4 @@ XDrawLines(_disp, _id, _gc, pts, n+1, CoordModeOrigin);
 free(pts);	return;}
 
 void	gx_rect(void* env, int x,int y,int w,int h){
-
 return;}

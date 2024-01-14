@@ -1,4 +1,6 @@
 project uranustime
 todo.txt
 
+. draw Uranus
+
 . set windows coordinates and size to fit both libraries

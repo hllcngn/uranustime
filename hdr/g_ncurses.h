@@ -2,8 +2,11 @@
 #define G_NCURSES_H
 #include <ncurses.h>
 
-typedef struct	g_win{
-	WINDOW	*win
-}g_win;
+#include <math.h>
+#include <stdlib.h>//malloc,free
+
+typedef struct	gx_win{
+	WINDOW	*win;
+}gx_win;
 
 #endif

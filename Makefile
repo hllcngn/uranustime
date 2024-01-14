@@ -1,5 +1,6 @@
 c:
 	gcc -ocut	src/main.c \
+			src/moondata.c \
 			src/ncurses/g_ncurses.c		-Ihdr	-lncurses
 
 x:
