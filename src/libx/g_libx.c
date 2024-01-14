@@ -5,7 +5,7 @@ gx_env	*env = (gx_env*)malloc(sizeof(gx_env));
 _disp = XOpenDisplay(NULL);
 _gc = XCreateGC(_disp, RootWindow(_disp, 0), 0, NULL);
 XSetForeground(_disp, _gc, 0x77733333);
-_id = XCreateSimpleWindow(_disp, RootWindow(_disp, 0), 0,0,1000,800,
+_id = XCreateSimpleWindow(_disp, RootWindow(_disp, 0), 0,0,WINW,WINH,
 		0,0,0xff333333);
 XMapWindow(_disp, _id);
 XSelectInput(_disp, _id, KeyPressMask | ExposureMask);
@@ -16,8 +16,11 @@ void	gx_end(void *env){
 XCloseDisplay(_disp);
 free(env);	return;}
 
-void*	gx_window(void* env, int x,int y,int w,int h, char *title){
+void*	gx_window(void* env, int x100,int y100,int w100,int h100,
+		char *title){
 gx_win*	new =(gx_win*)malloc(sizeof(gx_win));
+int x =WINW/100*x100, y =WINH/100*y100;
+int w =WINW/100*w100, h =WINH/100*h100;
 new->id = XCreateSimpleWindow(_disp, _id, x,y,w,h,
 		3,0x33777777,0x33777333);
 XMapWindow(_disp, new->id);
@@ -39,11 +42,15 @@ return 0;}
 void	gx_hello(void *env){
 XDrawString(_disp,_id,_gc, 33,33, "hello", 5);
 return;}
-void	gx_print(void *env, int x,int y, char* str){
-XDrawString(_disp,_id,_gc, x,y, str, strlen(str));
+void	gx_print(void *env, int x100,int y100, char* str){
+int x =WINW/100*x100, y =WINH/100*y100;
+XDrawString(_disp,_id,_gc, x,y, str,strlen(str));
 return;}
-void	gx_printw(void *env,void* win, int x,int y, char* str){
-XDrawString(_disp,_wid,_gc, x,y, str, strlen(str));
+void	gx_printw(void *env,void* win, int x100,int y100, char* str){
+XWindowAttributes xwa;
+XGetWindowAttributes(_disp,_wid, &xwa);
+int x =xwa.width/100*x100, y =xwa.height/100*y100;
+XDrawString(_disp,_wid,_gc, x,y, str,strlen(str));
 return;}
 
 

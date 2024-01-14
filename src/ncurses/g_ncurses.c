@@ -10,14 +10,13 @@ return NULL;}
 void	gx_end(void *env){
 endwin();	return;}
 
-void	*gx_window(void* env, int y,int x,int height,int width, char *title){
-WINDOW	*win = newwin(height, width, y, x);
-box(win, 0, 0);
-mvwprintw(win, 1, 1, title);
-wmove(win, 3, 2);
-for (int i=1; i<width-2; i++){
-wprintw(win, "─");}
-wrefresh(win);
+void	*gx_window(void* env, int x100,int y100,int w100,int h100,
+		char *title){
+int x =x100*COLS/100, y =y100*LINES/100;
+int w =w100*COLS/100, h =h100*LINES/100;
+WINDOW	*win = newwin(h,w,y,x);
+box(win, 0, 0); mvwprintw(win, 1,1, title);
+wmove(win, 2,1); for (int i=1; i<w-1; i++) waddch(win, '-');
 return (void*)win;}
 void	gx_freewindow(void* win){
 delwin(win);	return;}
@@ -31,11 +30,14 @@ return getch();}
 
 void	gx_hello(void *env){
 printw("hello");	return;}
-void	gx_print(void *env, int x,int y, char* str){
-mvprintw(x,y, str);	return;}
-void	gx_printw(void *env,void* win, int x,int y, char* str){
-mvwprintw(win, x,y, str);
-return;}
+void	gx_print(void *env, int x100,int y100, char* str){
+int x =x100*COLS/100, y =y100*LINES/100;
+mvprintw(y,x, str);	return;}
+void	gx_printw(void *env,void* win, int x100,int y100, char* str){
+int w,h;	getmaxyx(win, h,w);
+int x =x100*w/100, y =y100*(h-3)/100 +3;
+mvwprintw(win, y,x, str);
+wrefresh(win);	return;}
 
 
 

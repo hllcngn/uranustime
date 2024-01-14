@@ -7,6 +7,9 @@
 #include <math.h>
 #include <string.h>
 
+#define WINW	1000
+#define WINH	800
+
 #define _disp	((gx_env*)env)->disp
 #define _id	((gx_env*)env)->id
 #define _gc	((gx_env*)env)->gc
