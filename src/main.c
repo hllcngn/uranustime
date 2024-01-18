@@ -9,11 +9,11 @@ int	main(int ac, char **av){
 srand(time(NULL));
 void	*gx_env; if (gx_init(&gx_env)==-1) return -1;
 MoonData** moondata =get_moondata();
-//gx_draw_moondata(gx_env, moondata);
+gx_draw_moondata(gx_env, moondata);
 
 int c =0; do{
 switch(c){
-case K_SETTINGS:	//gx_display_settings(gx_env);
+case K_SETTINGS:	gx_display_settings(gx_env);
 	break;
 default:
 break;}

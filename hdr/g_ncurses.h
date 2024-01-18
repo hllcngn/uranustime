@@ -20,20 +20,20 @@
 //
 #define MDTITLE	"moondata"
 #define MDX	0
-#define MDY	12
+#define MDY	11
 #define MDW	WINW
-#define MDH	3
+#define MDH	(WINH-MDY)
 //
 #define SETTINGTITLE	"settings"
-#define SETTINGX  150
-#define SETTINGY  150
+#define SETTINGX  15
+#define SETTINGY  5
 #define SETTINGW  (WINW-2*SETTINGX)
 #define SETTINGH  (WINH-2*SETTINGY)
 
 #define _ENV	((gx_env*)env)
 #define _WIN	((gx_win*)win)
 //
-#define _mainwin ((gx_env*)env)->mainwin
+#define _mainwin _ENV->mainwin
 //
 #define _WID	_ENV->wid
 #define _WVIEW	_WID[IDVIEW]

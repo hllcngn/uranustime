@@ -59,11 +59,9 @@ printw("hello");	return;}
 void	gx_print(void *env, int x100,int y100, char* str){
 int x =x100*COLS/100, y =y100*LINES/100;
 mvprintw(y,x, str);	return;}
-void	gx_printw(void *env,void* win, int x100,int y100, char* str){
-int w,h;	getmaxyx(win, h,w);
-int x =x100*w/100, y =y100*(h-3)/100 +3;
-mvwprintw(win, y,x, str);
-wrefresh(win);	return;}
+void	gx_printw(void *env,void* win, int x,int y, char* str){
+mvwprintw(_wid, y,x, str);
+wrefresh(_wid);	return;}
 
 
 

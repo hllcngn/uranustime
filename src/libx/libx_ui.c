@@ -1,8 +1,7 @@
-#include "g_hdr.h"
 #include "g_libx.h"
 
 void gx_draw_moondata(void* env, MoonData** md){
-for(int i=0,y=20;i<MOON_NB;i++,y+=20){
+for(int i=0,y=20;i<MOON_NB && y<MDH;i++,y+=20){
 	gx_printw(env,_WMD, 15,y, md[i]->name);
 			}
 return;}
