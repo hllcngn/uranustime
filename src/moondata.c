@@ -18,6 +18,7 @@ md[4]->orbital_period =208.949616f;
 md[5]->name =strdup("Oberon");
 md[5]->orbital_period =323.117616f;
 return md;}
+//
 void	free_moondata(MoonData** md){
 for (int i=0;i<MOON_NB;i++) free(md[i]);
-return;}
+free(md);	return;}

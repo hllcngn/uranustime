@@ -5,28 +5,43 @@ int	gx_init(void** env){
 initscr();
 if(COLS<WINW || LINES<WINH){
 	printf("terminal needs to be at least %ix%i",WINW,WINH);
-	endwin();
-	return -1;}
+	endwin(); return -1;}
 noecho(); cbreak(); curs_set(0); start_color();
 refresh();
 init_pair(10, 9, 15);
+//
 *env =(void*)malloc(sizeof(gx_env));
 _mainwin =newwin(15,75,0,0);
 box(_mainwin,0,0);
-wrefresh(_mainwin);	return 0;}
+wrefresh(_mainwin);
+_WID =(gx_win**)malloc(sizeof(gx_win*)*WIN_COUNT);
+_WSETTING =gx_window(env,SETTINGX,SETTINGY,SETTINGW,SETTINGH,SETTINGTITLE,0);
+_WVIEW	=gx_window(env, VIEWX,VIEWY,VIEWW,VIEWH, VIEWTITLE, 1);
+_W1	=gx_window(env, W1X,W1Y,W1W,W1H, W1TITLE, 1);
+_WMD	=gx_window(env, MDX,MDY,MDW,MDH, MDTITLE, 1);
+return 0;}
+//
 void	gx_end(void *env){
+for (int i=0;i<WIN_COUNT;i++) gx_freewindow(_WID[i]);
+free(_WID);
+delwin(_mainwin);
+free(env);
 endwin();	return;}
 
-void	*gx_window(void* env, int x100,int y100,int w100,int h100,
-		char *title){
-int x =x100*WINW/100, y =y100*WINH/100;
-int w =w100*WINW/100, h =h100*WINH/100;
-WINDOW	*win = newwin(h,w,y,x);
-box(win, 0, 0); mvwprintw(win, 1,1, title);
-wmove(win, 2,1); for (int i=1; i<w-1; i++) waddch(win, '-');
-return (void*)win;}
+void	*gx_window(void* env, int x,int y,int w,int h, char *title,
+		int is_displayed){
+gx_win*	win =(gx_win*)malloc(sizeof(gx_win));
+_wid =newwin(h,w,y,x);
+win->title =strdup(title);
+win->is_displayed =is_displayed;
+box(_wid, 0, 0); mvwprintw(_wid, 0,2, title);
+wrefresh(_wid);		return (void*)win;}
+//
 void	gx_freewindow(void* win){
-delwin(win);	return;}
+printf("debug"); getch();
+//free(_WIN->title); //<==
+delwin(_wid);
+free(win);	return;}
 
 
 
