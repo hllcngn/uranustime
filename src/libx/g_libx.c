@@ -1,4 +1,3 @@
-#include "g_hdr.h"
 #include "g_libx.h"
 
 int	gx_init(void** penv){
@@ -15,10 +14,11 @@ _font = XLoadQueryFont(_disp, "9x15");
 XSetFont(_disp, _gc, _font->fid);
 //
 _WID =(gx_win**)malloc(sizeof(gx_win*)*WIN_COUNT);
-_WSETTING =gx_window(env,SETTINGX,SETTINGY,SETTINGW,SETTINGH,SETTINGTITLE,0);
-_WVIEW	=gx_window(env, VIEWX,VIEWY,VIEWW,VIEWH, VIEWTITLE, 1);
-_W1	=gx_window(env, W1X,W1Y,W1W,W1H, W1TITLE, 1);
-_WMD	=gx_window(env, MDX,MDY,MDW,MDH, MDTITLE, 1);
+_WSETTING =(gx_win*)gx_window(env, SETTINGX,SETTINGY,SETTINGW,SETTINGH,
+		SETTINGTITLE, 0);
+_WVIEW	=(gx_win*)gx_window(env, VIEWX,VIEWY,VIEWW,VIEWH, VIEWTITLE, 1);
+_W1	=(gx_win*)gx_window(env, W1X,W1Y,W1W,W1H, W1TITLE, 1);
+_WMD	=(gx_win*)gx_window(env, MDX,MDY,MDW,MDH, MDTITLE, 1);
 return 0;}
 //
 void	gx_end(void *env){

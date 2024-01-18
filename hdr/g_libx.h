@@ -2,6 +2,7 @@
 #define G_LIBX_H
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
+#include "g_hdr.h"
 
 #define WINW	1000
 #define WINH	700

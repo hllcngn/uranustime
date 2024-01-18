@@ -17,10 +17,7 @@ case K_SETTINGS:	//gx_display_settings(gx_env);
 	break;
 default:
 break;}
-}while((c =getch())!=K_QUIT);
-//}while((c =(gx_getch(gx_env)))!=K_QUIT);
-printf("debug"); getch();
+}while((c =(gx_getch(gx_env)))!=K_QUIT);
 gx_end(gx_env);
-printf("debug"); getch();
 free_moondata(moondata);
 return 0;}

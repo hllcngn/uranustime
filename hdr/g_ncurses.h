@@ -1,6 +1,7 @@
 #ifndef G_NCURSES_H
 #define G_NCURSES_H
 #include <ncurses.h>
+#include "g_hdr.h"
 
 #define WINW	75
 #define WINH	15
@@ -34,7 +35,7 @@
 //
 #define _mainwin ((gx_env*)env)->mainwin
 //
-#define _WID	(_ENV->wid)
+#define _WID	_ENV->wid
 #define _WVIEW	_WID[IDVIEW]
 #define _W1	_WID[ID1]
 #define _WMD	_WID[IDMD]
