@@ -3,8 +3,8 @@
 
 #define MOON_NB	6
 
-#define K_QUIT 'q'
-#define K_SETTINGS 's'
+#define K_QUIT		'q'
+#define K_SETTINGS	's'
 
 typedef struct{
 	char*	name;

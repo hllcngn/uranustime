@@ -7,7 +7,7 @@ void*	env = *penv;
 //
 _disp = XOpenDisplay(NULL);
 _gc = XCreateGC(_disp, RootWindow(_disp, 0), 0, NULL);
-XSetForeground(_disp, _gc, 0x11111111);
+XSetForeground(_disp, _gc, 0x99999999);
 _id = XCreateSimpleWindow(_disp,RootWindow(_disp, 0), 0,0,WINW,WINH, 0,0,0);
 XMapWindow(_disp, _id);
 XSelectInput(_disp, _id, KeyPressMask | ExposureMask);
@@ -15,10 +15,10 @@ _font = XLoadQueryFont(_disp, "9x15");
 XSetFont(_disp, _gc, _font->fid);
 //
 _WID =(gx_win**)malloc(sizeof(gx_win*)*WIN_COUNT);
-_WVIEW	=gx_window(env, VIEWX,VIEWY,VIEWW,VIEWH, VIEWTITLE);
-_W1	=gx_window(env, W1X,W1Y,W1W,W1H, W1TITLE);
-_WMD	=gx_window(env, MDX,MDY,MDW,MDH, MDTITLE);
-_WSETTING =gx_window(env, SETTINGX,SETTINGY,SETTINGW,SETTINGH, SETTINGTITLE);
+_WSETTING =gx_window(env,SETTINGX,SETTINGY,SETTINGW,SETTINGH,SETTINGTITLE,0);
+_WVIEW	=gx_window(env, VIEWX,VIEWY,VIEWW,VIEWH, VIEWTITLE, 1);
+_W1	=gx_window(env, W1X,W1Y,W1W,W1H, W1TITLE, 1);
+_WMD	=gx_window(env, MDX,MDY,MDW,MDH, MDTITLE, 1);
 return 0;}
 //
 void	gx_end(void *env){
@@ -27,16 +27,19 @@ for (int i=0;i<WIN_COUNT;i++) gx_freewindow(_WID[i]);
 free(_WID);
 free(env);	return;}
 
-void*	gx_window(void* env, int x,int y,int w,int h, char *title){
+void*	gx_window(void* env, int x,int y,int w,int h, char *title,
+		int is_displayed){
 gx_win*	new =(gx_win*)malloc(sizeof(gx_win));
 new->id =XCreateSimpleWindow(_disp,_id, x,y,w,h, 3,0x33777777,0xff112288);
 new->title =strdup(title);
+new->is_displayed =is_displayed;
 XMapWindow(_disp,new->id);
 return (void*)new;}
 //
 void	gx_freewindow(void* win){
 free(_WIN->title);
 free(win);	return;}
+
 
 
 char	gx_getch(void *env){
@@ -56,10 +59,7 @@ void	gx_print(void *env, int x100,int y100, char* str){
 int x =WINW/100*x100, y =WINH/100*y100;
 XDrawString(_disp,_id,_gc, x,y, str,strlen(str));
 return;}
-void	gx_printw(void *env,void* win, int x100,int y100, char* str){
-XWindowAttributes xwa;
-XGetWindowAttributes(_disp,_wid, &xwa);
-int x =xwa.width/100*x100, y =xwa.height/100*y100;
+void	gx_printw(void *env,void* win, int x,int y, char* str){
 XDrawString(_disp,_wid,_gc, x,y, str,strlen(str));
 return;}
 

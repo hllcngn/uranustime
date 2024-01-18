@@ -50,6 +50,7 @@
 
 typedef struct{
 	char		*title;
+	int		is_displayed;
 	Window		id;	}gx_win;
 typedef struct{
 	Display		*disp;

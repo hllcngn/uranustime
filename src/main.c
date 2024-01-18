@@ -8,13 +8,13 @@ void	*gx_env; if (gx_init(&gx_env)==-1) return -1;
 MoonData** moondata =get_moondata();
 srand(time(NULL));
 
-/*
-for (int i=0,l=10;i<MOON_NB;i++,l+=10){
-	gx_printw(gx_env,gx_env->wid[IDMD], 10,l, moondata[i]->name);}
-*/
+gx_draw_moondata(gx_env, moondata);
 
-do{
-}while(gx_getch(gx_env)!=K_QUIT);
+int c =0; do{
+switch(c){
+case K_SETTINGS:	gx_display_settings(gx_env);	break;
+default:	break;}
+}while((c =(gx_getch(gx_env)))!=K_QUIT);
 //gx_freewindow(win1);
 gx_end(gx_env);
 free_moondata(moondata);
