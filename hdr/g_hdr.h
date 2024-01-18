@@ -6,6 +6,14 @@
 #include <math.h>
 #include <string.h>
 
+//ui
+#define WIN_COUNT 4
+#define IDVIEW	    0
+#define ID1	    1
+#define IDMD	    2
+#define IDSETTING   3
+
+
 typedef struct{ int x,y; }vect;
 
 

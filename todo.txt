@@ -2,6 +2,7 @@ project uranustime
 todo.txt
 
 . draw Uranus
+. change colors
 
 V set windows coordinates and size to fit both libraries
 X deal with fancy window sizes

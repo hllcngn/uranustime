@@ -4,39 +4,47 @@
 int	gx_init(void** penv){
 (*penv) = (void*)malloc(sizeof(gx_env));
 void*	env = *penv;
+//
 _disp = XOpenDisplay(NULL);
 _gc = XCreateGC(_disp, RootWindow(_disp, 0), 0, NULL);
-XSetForeground(_disp, _gc, 0x77733333);
-_id = XCreateSimpleWindow(_disp, RootWindow(_disp, 0), 0,0,WINW,WINH,
-		0,0,0xff333333);
+XSetForeground(_disp, _gc, 0x11111111);
+_id = XCreateSimpleWindow(_disp,RootWindow(_disp, 0), 0,0,WINW,WINH, 0,0,0);
 XMapWindow(_disp, _id);
 XSelectInput(_disp, _id, KeyPressMask | ExposureMask);
 _font = XLoadQueryFont(_disp, "9x15");
 XSetFont(_disp, _gc, _font->fid);
+//
+_WID =(gx_win**)malloc(sizeof(gx_win*)*WIN_COUNT);
+_WVIEW	=gx_window(env, VIEWX,VIEWY,VIEWW,VIEWH, VIEWTITLE);
+_W1	=gx_window(env, W1X,W1Y,W1W,W1H, W1TITLE);
+_WMD	=gx_window(env, MDX,MDY,MDW,MDH, MDTITLE);
+_WSETTING =gx_window(env, SETTINGX,SETTINGY,SETTINGW,SETTINGH, SETTINGTITLE);
 return 0;}
+//
 void	gx_end(void *env){
 XCloseDisplay(_disp);
+for (int i=0;i<WIN_COUNT;i++) gx_freewindow(_WID[i]);
+free(_WID);
 free(env);	return;}
 
-void*	gx_window(void* env, int x100,int y100,int w100,int h100,
-		char *title){
+void*	gx_window(void* env, int x,int y,int w,int h, char *title){
 gx_win*	new =(gx_win*)malloc(sizeof(gx_win));
-int x =WINW/100*x100, y =WINH/100*y100;
-int w =WINW/100*w100, h =WINH/100*h100;
-new->id = XCreateSimpleWindow(_disp, _id, x,y,w,h,
-		3,0x33777777,0x33777333);
-XMapWindow(_disp, new->id);
+new->id =XCreateSimpleWindow(_disp,_id, x,y,w,h, 3,0x33777777,0xff112288);
+new->title =strdup(title);
+XMapWindow(_disp,new->id);
 return (void*)new;}
+//
 void	gx_freewindow(void* win){
+free(_WIN->title);
 free(win);	return;}
-
 
 
 char	gx_getch(void *env){
 XEvent	xe;
 while(1){
 	XNextEvent(_disp, &xe);
-	if (xe.type == KeyPress) return 0;}
+	if (xe.type == KeyPress)
+		return XLookupKeysym(&xe.xkey,0);}
 return 0;}
 
 
