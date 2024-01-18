@@ -3,8 +3,10 @@ todo.txt
 
 . draw Uranus
 
-. set windows coordinates and size to fit both libraries
-. deal with fancy window sizes
-. and resizes
+V set windows coordinates and size to fit both libraries
+X deal with fancy window sizes
+X and resizes
+. drawing restricted to a window's size
 
-. libx: draw window titles
+. add window titles to window structure
+. fix drawing of window titles

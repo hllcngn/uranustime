@@ -1,19 +1,26 @@
 #include "g_hdr.h"
 #include "g_ncurses.h"
 
-void	*gx_init(){
-initscr(); noecho(); cbreak();
-curs_set(0); start_color();
+int	gx_init(void** env){
+initscr();
+if(COLS<WINW || LINES<WINH){
+	printf("terminal needs to be at least %ix%i",WINW,WINH);
+	endwin();
+	return -1;}
+noecho(); cbreak(); curs_set(0); start_color();
 refresh();
 init_pair(10, 9, 15);
-return NULL;}
+*env =(void*)malloc(sizeof(gx_env));
+_mainwin =newwin(15,75,0,0);
+box(_mainwin,0,0);
+wrefresh(_mainwin);	return 0;}
 void	gx_end(void *env){
 endwin();	return;}
 
 void	*gx_window(void* env, int x100,int y100,int w100,int h100,
 		char *title){
-int x =x100*COLS/100, y =y100*LINES/100;
-int w =w100*COLS/100, h =h100*LINES/100;
+int x =x100*WINW/100, y =y100*WINH/100;
+int w =w100*WINW/100, h =h100*WINH/100;
 WINDOW	*win = newwin(h,w,y,x);
 box(win, 0, 0); mvwprintw(win, 1,1, title);
 wmove(win, 2,1); for (int i=1; i<w-1; i++) waddch(win, '-');

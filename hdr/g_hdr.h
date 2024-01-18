@@ -1,11 +1,16 @@
 #ifndef G_HDR_H
 #define G_HDR_H
 
+#include <stdio.h>//error messages
+#include <stdlib.h>
+#include <math.h>
+#include <string.h>
+
 typedef struct{ int x,y; }vect;
 
 
-void	*gx_init();
-void	gx_end(void *gx_env);
+int	gx_init(void** gx_env);
+void	gx_end(void* gx_env);
 
 void	*gx_window(void* gx_env, int x,int y,int w,int h, char *title);
 void	gx_freewindow(void* win);

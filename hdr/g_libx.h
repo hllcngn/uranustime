@@ -3,12 +3,8 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-#include <stdlib.h>
-#include <math.h>
-#include <string.h>
-
 #define WINW	1000
-#define WINH	800
+#define WINH	700
 
 #define _disp	((gx_env*)env)->disp
 #define _id	((gx_env*)env)->id

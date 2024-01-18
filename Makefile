@@ -8,3 +8,6 @@ x:
 	gcc -oxut	src/main.c \
 			src/moondata.c \
 			src/libx/g_libx.c		-Ihdr	-lX11
+
+clean:
+	rm cut.exe xut.exe

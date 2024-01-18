@@ -1,7 +1,9 @@
+#include "g_hdr.h"
 #include "g_libx.h"
 
-void	*gx_init(){
-gx_env	*env = (gx_env*)malloc(sizeof(gx_env));
+int	gx_init(void** penv){
+(*penv) = (void*)malloc(sizeof(gx_env));
+void*	env = *penv;
 _disp = XOpenDisplay(NULL);
 _gc = XCreateGC(_disp, RootWindow(_disp, 0), 0, NULL);
 XSetForeground(_disp, _gc, 0x77733333);
@@ -11,7 +13,7 @@ XMapWindow(_disp, _id);
 XSelectInput(_disp, _id, KeyPressMask | ExposureMask);
 _font = XLoadQueryFont(_disp, "9x15");
 XSetFont(_disp, _gc, _font->fid);
-return (void*)env;}
+return 0;}
 void	gx_end(void *env){
 XCloseDisplay(_disp);
 free(env);	return;}

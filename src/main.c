@@ -4,9 +4,9 @@
 #include <stdlib.h>//srand
 
 int	main(int ac, char **av){
+void	*gx_env; if (gx_init(&gx_env)==-1) return -1;
 srand(time(NULL));
 MoonData** moondata =get_moondata();
-void	*gx_env = gx_init();
 
 gx_hello(gx_env);
 gx_print(gx_env, 5,5, "hello2");

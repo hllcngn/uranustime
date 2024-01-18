@@ -2,11 +2,15 @@
 #define G_NCURSES_H
 #include <ncurses.h>
 
-#include <math.h>
-#include <stdlib.h>//malloc,free
+#define WINW	75
+#define WINH	15
 
-typedef struct	gx_win{
-	WINDOW	*win;
-}gx_win;
+#define _mainwin ((gx_env*)env)->mainwin
+
+typedef struct{
+	WINDOW	*mainwin;   }gx_env;
+
+typedef struct{
+	WINDOW	*win;	}gx_win;
 
 #endif
