@@ -1,6 +1,6 @@
-#include "uranustime.h"
-#include <stdlib.h>//malloc
-#include <string.h>//strdup
+#include "urt.h"
+#include <stdlib.h>
+#include <string.h>
 
 MoonData** get_moondata(void){
 MoonData** md =(MoonData**)malloc(sizeof(MoonData*)*MOON_NB);
@@ -19,6 +19,6 @@ md[5]->name =strdup("Oberon");
 md[5]->orbital_period =323.117616f;
 return md;}
 //
-void	free_moondata(MoonData** md){
+void free_moondata(MoonData** md){
 for (int i=0;i<MOON_NB;i++) free(md[i]);
 free(md);	return;}

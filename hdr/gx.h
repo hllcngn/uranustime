@@ -1,19 +1,25 @@
-#ifndef G_HDR_H
-#define G_HDR_H
+#ifndef GX_H
+#define GX_H
+#include "urt.h"
 
-#include "uranustime.h"
-
-#include <stdio.h>//error messages
 #include <stdlib.h>
+#include <stdio.h>//error messages
 #include <math.h>
 #include <string.h>
 
+#define FPS   60
+
 //ui
-#define WIN_COUNT	4
+#define WIN_COUNT   4
 #define IDVIEW	    0
 #define ID1	    1
 #define IDMD	    2
 #define IDSETTING   3
+
+/*
+navigate
+clock
+*/
 
 
 typedef struct{ int x,y; }vect;
@@ -24,7 +30,7 @@ void	gx_end(void* gx_env);
 
 void	*gx_window(void* gx_env, int x,int y,int w,int h, char *title,
 		int is_displayed);
-void	gx_freewindow(void* win);
+void	gx_freewindow(void* env, void* win);
 
 char	gx_getch(void *gx_env);
 
@@ -32,11 +38,8 @@ void	gx_hello(void *gx_env);
 void	gx_print(void *env, int x,int y, char* str);
 void	gx_printw(void *env,void* win, int x,int y, char* str);
 
-void	gx_circle(void *gx_env);
 void	gx_point(void *gx_env);
 void	gx_ellipse(void *gx_env);
-void	gx_square_ellipse(void *gx_env);
-void	gx_rect(void* env, int x,int y,int w,int h);
 
 void	gx_draw_moondata(void* gx_env, MoonData** md);
 void	gx_display_settings(void* env);

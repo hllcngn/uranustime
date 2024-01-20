@@ -1,13 +1,24 @@
 project uranustime
 todo.txt
 
+todo now:
+. fix header names and include statements
+
+todo soon:
+. ncurses: redrawing windows
+. gx_freewindow doesn't impact the env windows array
+
 . draw Uranus
-. change colors
+v change colors
 
 V set windows coordinates and size to fit both libraries
 X deal with fancy window sizes
 X and resizes
 . drawing restricted to a window's size
 
-. add window titles to window structure
+V add window titles to window structure
 . fix drawing of window titles
+
+navigation pseudocode:
+keywords: orbit speed dist coords
+values: FPN starname
