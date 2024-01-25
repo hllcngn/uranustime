@@ -25,7 +25,7 @@ _WMD	=(gx_win*)gx_window(new, MDX,MDY,MDW,MDH, MDTITLE, 1);
 return 0;}
 //
 void	gx_end(void *env){
-for (int i=0;i<WIN_COUNT;i++) gx_freewindow(_WID[i]);
+for (int i=0;i<WIN_COUNT;i++) gx_freewindow(env,_WID[i]);
 free(_WID);
 delwin(_mainwin);
 free(env);
@@ -40,7 +40,7 @@ new->is_displayed =is_displayed;
 box(new->id, 0,0); mvwprintw(new->id, 0,2, title);
 wrefresh(new->id);		return (void*)new;}
 //
-void	gx_freewindow(void* win){
+void	gx_freewindow(void* env, void* win){
 free(_WIN->title);
 delwin(_wid);
 free(win);	return;}

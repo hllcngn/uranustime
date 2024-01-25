@@ -2,11 +2,16 @@ project uranustime
 todo.txt
 
 todo now:
-. fix header names and include statements
+V fix header names and include statements
+. creating a window is too difficult
+  and having many windows is an interesting feature
+What about 1 source file per window?
+and to store pointers in a list in env
 
-todo soon:
+tofix:
 . ncurses: redrawing windows
 . gx_freewindow doesn't impact the env windows array
+
 
 . draw Uranus
 v change colors
@@ -18,6 +23,7 @@ X and resizes
 
 V add window titles to window structure
 . fix drawing of window titles
+
 
 navigation pseudocode:
 keywords: orbit speed dist coords

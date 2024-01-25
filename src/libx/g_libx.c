@@ -23,7 +23,7 @@ return 0;}
 //
 void	gx_end(void *env){
 XCloseDisplay(_disp);
-for (int i=0;i<WIN_COUNT;i++) gx_freewindow(_WID[i]);
+for (int i=0;i<WIN_COUNT;i++) gx_freewindow(env,_WID[i]);
 free(_WID);
 free(env);	return;}
 

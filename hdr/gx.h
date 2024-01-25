@@ -23,6 +23,7 @@ clock
 
 
 typedef struct{ int x,y; }vect;
+typedef struct{ int x,y,w,h; }rect;
 
 
 int	gx_init(void** gx_env);

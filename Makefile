@@ -12,4 +12,4 @@ x:
 			src/libx/g_libx.c		-Ihdr	-lX11
 
 clean:
-	rm curt.exe xurt.exe
+	rm curt.exe xurt.exe *.stackdump
