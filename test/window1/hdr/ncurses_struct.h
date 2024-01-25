@@ -1,5 +1,6 @@
 #ifndef STRUCT_H
 #define STRUCT_H
+
 #include <ncurses.h>
 
 typedef struct gx_win{

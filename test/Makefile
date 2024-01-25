@@ -1,5 +1,13 @@
 cwindow1:
-	gcc -otest	testwindow1_ncurses.c \
-			testwindow1_main.c		-I. -lncurses
+	gcc -ocwindow1	window1/ncurses/ncursestest.c \
+			window1/windows/win.c \
+			window1/windows/otherwin.c \
+			window1/main.c		-Iwindow1/hdr \
+						-Iwindow1/windows	-lncurses
 xwindow1:
-	gcc -otest	testwindow1_main.c		-I. -lX11
+	gcc -oxwindow1	window1/windows/otherwin.c \
+			window1/windows/win.c \
+			window1/main.c		-Iwindow1/hdr \
+						-Iwindow1/windows	-lX11
+clean:
+	rm *.exe *.stackdump
