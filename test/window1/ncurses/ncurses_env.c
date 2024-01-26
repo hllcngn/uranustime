@@ -1,4 +1,3 @@
-#include "windows.h"
 #include "ncurses_struct.h"
 
 int	gx_start(gx_env** env){
@@ -15,11 +14,15 @@ new->mainwin =newwin(WINH,WINW,0,0);
 /*x*/box(new->mainwin,0,0);
 /*x*/wrefresh(new->mainwin);
 //
-new->wid =(gx_win**)malloc(sizeof(gx_win*)*WIN_COUNT);
+//new->wid =(gx_win**)malloc(sizeof(gx_win*)*WIN_COUNT);
 return 0;}
 
 void	gx_end(gx_env* env){
-free(env->wid);
+//free(env->wid);
 delwin(env->mainwin);
 free(env);
 endwin();	return;}
+
+
+int	gx_getch(gx_env* env){
+return getch();}

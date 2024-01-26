@@ -4,6 +4,11 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
+#include <stdlib.h>
+
+#define WINW	1000
+#define WINH	700
+
 typedef struct{
 	char		*title;
 	int		is_displayed;
