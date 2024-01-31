@@ -1,6 +1,3 @@
-#ifndef URT_H
-#define URT_H
+#pragma once
 
 #define K_QUIT	'0'
-
-#endif

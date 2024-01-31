@@ -1,4 +1,4 @@
-#include "ncurses_struct.h"
+#include "gx_ncurses.h"
 
 int	gx_start(gx_env** env){
 initscr();

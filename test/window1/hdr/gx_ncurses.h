@@ -1,5 +1,4 @@
-#ifndef STRUCT_H
-#define STRUCT_H
+#pragma once
 
 #include <ncurses.h>
 
@@ -17,5 +16,3 @@ typedef struct gx_win{
 typedef struct{
 	gx_win		**wid;
 	WINDOW		*mainwin;	}gx_env;
-
-#endif

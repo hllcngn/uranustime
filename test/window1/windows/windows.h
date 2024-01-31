@@ -1,9 +1,6 @@
-#ifndef WINDOWS_H
-#define WINDOWS_H
+#pragma once
 
 #define WIN_COUNT    2
 
 #include "win.h"
 #include "otherwin.h"
-
-#endif

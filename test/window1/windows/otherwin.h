@@ -1,11 +1,5 @@
-#ifdef CURSES_H
-# include "ncurses_struct.h"
-#else
-# include "xlib_struct.h"
-#endif
-
-#include <stdio.h>
-#include <stdlib.h>
+#pragma once
+#include "windows_commons.h"
 
 #undef WINDOW_NAME
 #define WINDOW_NAME otherwin

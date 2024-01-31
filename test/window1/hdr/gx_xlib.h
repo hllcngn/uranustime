@@ -1,5 +1,4 @@
-#ifndef STRUCT2_H
-#define STRUCT2_H
+#pragma once
 
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
@@ -21,5 +20,3 @@ typedef struct{
 	gx_win		**wid;
 	GC		gc;
 	XFontStruct	*font;		}gx_env;
-
-#endif

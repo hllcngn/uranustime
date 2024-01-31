@@ -1,4 +1,4 @@
-#include "xlib_struct.h"
+#include "gx_xlib.h"
 
 int	gx_start(gx_env** env){
 *env = (gx_env*)malloc(sizeof(gx_env));
