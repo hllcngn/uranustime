@@ -14,13 +14,17 @@ XSelectInput(new->disp, new->id, KeyPressMask|ExposureMask);
 new->font =XLoadQueryFont(new->disp, "9x15");
 XSetFont(new->disp, new->gc, new->font->fid);
 //
+//TODO create and generate windows list
 //env->wid =(gx_win**)malloc(sizeof(gx_win*)*WIN_COUNT);
 return 0;}
 
 void	gx_end(gx_env* env){
 XCloseDisplay(env->disp);
+//free windows list
 //free(env->wid);
 free(env);	return;}
+
+//TODO refresh everything function
 
 
 int	gx_getch(gx_env *env){
@@ -29,3 +33,7 @@ while(1){ XNextEvent(env->disp, &xe);
 if(xe.type == KeyPress)
 	return XLookupKeysym(&xe.xkey,0);}
 return 0;}
+
+//TODO
+//printing functions
+//drawing functions
