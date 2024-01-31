@@ -1,6 +1,5 @@
 cwindow1:
-	gcc -ocwindow1	ncurses/ncursestest.c \
-			ncurses/ncurses_env.c \
+	gcc -ocwindow1	ncurses/ncurses_env.c \
 			windows/win.c \
 			windows/otherwin.c \
 			main.c			-Ihdr \

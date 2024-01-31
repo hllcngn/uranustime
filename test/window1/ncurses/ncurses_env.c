@@ -8,7 +8,7 @@ if(COLS<WINW || LINES<WINH){
 noecho(); cbreak(); curs_set(0);
 refresh();
 //
-*env =(gx_env*)malloc(sizeof(gx_env));
+*env =malloc(sizeof(gx_env));
 gx_env* new =*env;
 new->mainwin =newwin(WINH,WINW,0,0);
 /*x*/box(new->mainwin,0,0);

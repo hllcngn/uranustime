@@ -3,7 +3,7 @@
 gx_win *WINDOW_PREFIX(_create_window)(void){
 printf("boo");
 printf("boo");
-gx_win	*win =(gx_win*)malloc(sizeof(gx_win));
+gx_win	*win =malloc(sizeof(gx_win));
 win->title ="win";
 win->update =&otherwin_update;
 return win;}
