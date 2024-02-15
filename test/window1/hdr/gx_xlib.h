@@ -5,6 +5,8 @@
 
 #include <stdlib.h>
 
+#include "windows.h"
+
 #define WINW	1000
 #define WINH	700
 

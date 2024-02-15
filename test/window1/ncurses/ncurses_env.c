@@ -1,4 +1,5 @@
 #include "gx_ncurses.h"
+#include "windows.h"
 
 int	gx_start(gx_env** env){
 initscr();
@@ -8,19 +9,11 @@ if(COLS<WINW || LINES<WINH){
 noecho(); cbreak(); curs_set(0); refresh();
 //
 *env =malloc(sizeof(gx_env));
-gx_env* new =*env;
-new->mainwin =newwin(WINH,WINW,0,0);
-/*x*/box(new->mainwin,0,0);
-/*x*/wrefresh(new->mainwin);
-//
-//TODO create and generate windows list
-//new->wid =malloc(sizeof(gx_win*)*WIN_COUNT);
+create_windows(*env);
 return 0;}
 
 void	gx_end(gx_env* env){
-//free windows list
-//free(env->wid);
-delwin(env->mainwin);
+destroy_windows(env);
 free(env);
 endwin();	return;}
 

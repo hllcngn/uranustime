@@ -1,5 +1,15 @@
 #pragma once
-#include "windows_commons.h"
+
+//#include "windows_commons.h"
+
+#ifdef CURSES_H
+# include "gx_ncurses.h"
+#else
+# include "gx_xlib.h"
+#endif
+
+#include <stdio.h>
+#include <stdlib.h>
 
 #undef WINDOW_NAME
 #define WINDOW_NAME win
@@ -10,6 +20,7 @@
 #undef WINDOW_PREFIX
 #define WINDOW_PREFIX(function) WINDOW_PREFIXX(WINDOW_NAME,function)
 
-void WINDOW_PREFIX(_create_window)(void);
+gx_win* WINDOW_PREFIX(_create_window)(gx_env* env);
+void WINDOW_PREFIX(_destroy)(gx_env* env);
 
 void WINDOW_PREFIX(_update)(void);

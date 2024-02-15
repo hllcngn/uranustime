@@ -12,7 +12,7 @@
 #include <stdlib.h>
 
 #undef WINDOW_NAME
-#define WINDOW_NAME otherwin
+#define WINDOW_NAME mainwin
 #undef WINDOW_PREFIXXX
 #define WINDOW_PREFIXXX(prefix,function) prefix ## function
 #undef WINDOW_PREFIXX
