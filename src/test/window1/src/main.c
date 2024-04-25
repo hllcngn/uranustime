@@ -5,7 +5,7 @@
 #include <unistd.h>//usleep
 
 int main(int ac, char** av){
-gx_env* env; if (gx_start(&env) ==-1) return -1;
+gx_env* env; if (gx_start((void**)&env) ==-1) return -1;
 //TODO moondata
 
 int c =0, interval =CLOCKS_PER_SEC/FPS; do{

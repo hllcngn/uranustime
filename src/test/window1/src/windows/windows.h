@@ -1,6 +1,6 @@
 #pragma once
 
-#include "windows_commons.h"
+//#include "windows_commons.h"
 /*#ifdef CURSES_H
 # include "gx_ncurses.h"
 #else

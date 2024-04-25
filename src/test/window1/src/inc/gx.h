@@ -8,9 +8,9 @@
 # include "gx_xlib.h"
 #endif*/
 
-#define FPS	60
+#define FPS	6
 
-int	gx_start(gx_env** env);
-void	gx_end(gx_env* env);
+int	gx_start(void** env);
+void	gx_end(void* env);
 
-int	gx_getch(gx_env* env);
+int	gx_getch(void* env);
