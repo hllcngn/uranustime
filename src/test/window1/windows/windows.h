@@ -1,11 +1,11 @@
-#ifndef WINDOWS_H
-#define WINDOWS_H
+#pragma once
 
-#ifdef CURSES_H
+#include "windows_commons.h"
+/*#ifdef CURSES_H
 # include "gx_ncurses.h"
 #else
 # include "gx_xlib.h"
-#endif
+#endif*/
 
 #define WIN_COUNT    3
 
@@ -21,5 +21,3 @@ void create_windows(gx_env* env);
 void destroy_windows(gx_env* env);
 
 void update_windows(gx_env* env);
-
-#endif

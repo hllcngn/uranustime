@@ -1,10 +1,10 @@
 #pragma once
 
-#ifdef CURSES_H
+//#ifdef CURSES_H
 # include "gx_ncurses.h"
-#else
+/*#else
 # include "gx_xlib.h"
-#endif
+#endif*/
 
 #include <stdio.h>
 #include <stdlib.h>

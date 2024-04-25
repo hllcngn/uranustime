@@ -1,12 +1,9 @@
 #include "urt.h"
 #include "gx.h"
-#include <time.h>//time,clock
-#include <unistd.h>//usleep
 
 int	main(int ac, char **av){
-void	*gx_env; if(gx_init(&gx_env)==-1) return -1;
+void *gx_env; if(gx_init(&gx_env)==-1) return -1;
 MoonData** moondata =get_moondata();
-
 gx_draw_moondata(gx_env, moondata);
 
 int c =0, interval =CLOCKS_PER_SEC/FPS; do{

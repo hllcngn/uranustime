@@ -1,18 +1,18 @@
 #pragma once
 
-//#include "windows_commons.h"
+#include "windows_commons.h"
 
-#ifdef CURSES_H
+/*#ifdef CURSES_H
 # include "gx_ncurses.h"
 #else
 # include "gx_xlib.h"
-#endif
+#endif*/
 
 #include <stdio.h>
 #include <stdlib.h>
 
 #undef WINDOW_NAME
-#define WINDOW_NAME win
+#define WINDOW_NAME mainwin
 #undef WINDOW_PREFIXXX
 #define WINDOW_PREFIXXX(prefix,function) prefix ## function
 #undef WINDOW_PREFIXX
