@@ -2,7 +2,7 @@
 
 void gx_draw_moondata(void* env, MoonData** md){
 for(int i=0,y=1;i<MOON_NB && y<MDH;i++,y++)
-	gx_printw(env,_WMD, 2,y, md[i]->name);
+	gx_wprint(env,_WMD, 2,y, md[i]->name);
 return;}
 
 void gx_wredraw(void* win){

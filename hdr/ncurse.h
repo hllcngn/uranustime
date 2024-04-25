@@ -46,12 +46,12 @@
 
 
 typedef struct{
-	char	*title;
-	int	is_displayed;
-	WINDOW	*id;	}gx_win;
+	char		*title;
+	int		is_displayed;
+	WINDOW		*id;		}gx_win;
 
 typedef struct{
-	gx_win	**wid;
-	WINDOW	*mainwin;   }gx_env;
+	gx_win		**wid;
+	WINDOW		*mainwin;	}gx_env;
 
 #endif

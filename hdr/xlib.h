@@ -1,5 +1,5 @@
-#ifndef LIBX_H
-#define LIBX_H
+#ifndef XLIB_H
+#define XLIB_H
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include "gx.h"
@@ -52,13 +52,13 @@
 typedef struct{
 	char		*title;
 	int		is_displayed;
-	Window		id;	}gx_win;
+	Window		id;		}gx_win;
 
 typedef struct{
 	Display		*disp;
 	Window		id;
 	gx_win		**wid;
 	GC		gc;
-	XFontStruct	*font;	}gx_env;
+	XFontStruct	*font;		}gx_env;
 
 #endif

@@ -37,7 +37,7 @@ char	gx_getch(void *gx_env);
 
 void	gx_hello(void *gx_env);
 void	gx_print(void *env, int x,int y, char* str);
-void	gx_printw(void *env,void* win, int x,int y, char* str);
+void	gx_wprint(void *env,void* win, int x,int y, char* str);
 
 void	gx_point(void *gx_env);
 void	gx_ellipse(void *gx_env);

@@ -1,4 +1,4 @@
-#include "libx.h"
+#include "xlib.h"
 
 int	gx_init(void** penv){
 (*penv) = (void*)malloc(sizeof(gx_env));
@@ -58,7 +58,7 @@ return;}
 void	gx_print(void *env, int x,int y, char* str){
 XDrawString(_disp,_id,_gc, x,y, str,strlen(str));
 return;}
-void	gx_printw(void *env,void* win, int x,int y, char* str){
+void	gx_wprint(void *env,void* win, int x,int y, char* str){
 XDrawString(_disp,_wid,_gc, x,y, str,strlen(str));
 return;}
 

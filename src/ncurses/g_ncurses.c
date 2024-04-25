@@ -54,9 +54,10 @@ return getch();}
 
 void	gx_hello(void *env){
 printw("hello");	return;}
+
 void	gx_print(void *env, int x,int y, char* str){
 mvprintw(y,x, str);	return;}
-void	gx_printw(void *env,void* win, int x,int y, char* str){
+void	gx_wprint(void *env,void* win, int x,int y, char* str){
 mvwprintw(_wid, y,x, str);
 wrefresh(_wid);	return;}
 
