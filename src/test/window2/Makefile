@@ -1,6 +1,7 @@
 c:
 	gcc -ocwindow2 \
 			src/ncurses_env.c \
+			src/windowncurses.c \
 			src/main.c \
 						-I. -lncurses -Duse_ncurses
 x:

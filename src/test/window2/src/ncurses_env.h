@@ -1,3 +1,4 @@
+//NCURSES ENV STRUCTURES
 #pragma once
 
 typedef struct{
