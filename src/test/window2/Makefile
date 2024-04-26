@@ -1,9 +1,12 @@
 c:
 	gcc -ocwindow2 \
-			src/ncurses_env.c \
-			src/windowncurses.c \
-			src/main.c \
-						-I. -lncurses -Duse_ncurses
+		src/main/main.c \
+		src/gx/ncurses/ncurses_env.c \
+		src/windows/ncurses/windowncurses.c \
+			-Isrc/gx/common \
+			-Isrc/gx/ncurses \
+			-Isrc/windows/ncurses \
+				-lncurses -Duse_ncurses
 x:
 	#don't forget to export DISPLAY=:0.0
 	gcc -oxwindow2	src/xlib/xlib_env.c \
