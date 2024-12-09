@@ -33,3 +33,7 @@ Uranus Time is not a small investment for me, not anymore at least. i'll start c
 i never used to give that much thought to my prospects. suddenly i feel overwhelmed by the options available. here i'm keeping previous prototypes and tests in a folder for easy access.
 
 URT is meant for a community, its inception was before IRC failed me - now coding in near silence. not that any part of IRC is representative of the community. i need to patch things up - i won't meet the same people - and i'm planning on coming back anyway. we'll have to deal with one another inB4 that's all we do.
+
+ $ U126 H18:M39:S8
+
+yesterday i finally realized i was building a project for a community that rejected me (and the project with me). therefore the project is flawed at its core, it wasn't meant to be anymore. it took me 100 hours to realize. i don't even know how i'll be able to make a program for any community subset anymore. i mean i probably won't, at the end of the day, what would be the point of that? it's too bad, because it would have been a good one.
