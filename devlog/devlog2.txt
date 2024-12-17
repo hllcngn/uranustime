@@ -1,0 +1,29 @@
+URT24 devlog 2: Efficiency, Dedication by hllcngn
+
+ $ U127 H4:M50:S19
+
+don't ask me how i finally decided to give the project a go in the end. tonight entering the development stage (there should really be a more exciting wording for this) for the first big push on programming. we're going to implement all the core functions of the program in a rush over the coming seven days. i have a sketch in front of me and i just need to translate it into code. another side thing that i've been pushing back and that i'd like to achieve is to get a setup to go discuss the project on IRC in some safe places, it might cheer things up and let me get bits of feedback on my concept.
+
+7 days equate to 168 hours, so if i had to make it fit in Uranus timing, i believe this would be about 1/2 an orbit of Oberon, Uranus' outtest inner moon. let me adjust my timer ...
+
+ $ 1/2 oberon before 19/12/24:0:0:0 - 9.16%
+
+i had to get shit drunk yesterday, so now my brain just can't compute. not blaming it all on alcohol, but also on the ambient mental confusion. i want to figure out more ways to measure time that i can integrate into my app. technically, orbital periods correspond to amounts of time that one could use on a timer at any given moment, instead of counting time up from a predetermined epoch. i suppose we could also count time from different dates, like a stopwatch. the program is going to need to be usable and efficient to get a good idea of time that passes regardless of the unit of measurement, even though i aim to put an emphasis on moons movement units.
+
+on the structure of the program, staring at my plan over my coffee earlier, i realized that i overlooked the aspect where you'd be able to have data displayed across multiple tiled subwindows. i had thought i'd deal with data display after this week since it seemed trivial, but it's not, and besides i need to proof the information that gets displayed in order to make sure that the experience is useful and smooth. right now though, the best use of my time is to get back in bed and rest some more until i have clear ideas. (i ended up sleeping until the next morning)
+
+ $ 1/2 oberon before 19/12/24:0:0:0 - 52.58%
+
+i had a couple of difficult days where i was again hesitating on the direction to give to the project. now i'm still giving it a go, but my mind is torn to pieces, as usual with me when decision-making is involved.
+
+i've been reading some documentation and learning more in general about xlib and such. i found out about the cairo lib, which i might use for the project, if i can make it work.
+
+it's daunting to see how much i still have to learn, not specifically about the libraries, but about the system and its community and ecosystem. of course, now that i'm writing this it sounds ridiculous, as i'm hyped about all this. i've been doing varied things in my life, including struggling with mental illness for years, and a considerable amount of time spent writing science fiction, so i'm not exactly the supernerd type, but for sure i'll get a hang of these things in time.
+
+i created my official github and ko-fi profiles in august of 2023, with the idea in mind of committing to making big, or at least fancy, or at minimum funny things happen for Linux.
+
+the genesis for the present project was about in the same timeframe. at the time i was still not doing very well, i tried to make a prototype and worked on it spottily, but ended up scrapping the initial structural design, which was purely in C, since it didn't make that much sense, and in particular i would run into issues that i wouldn't have had if i kept it simplier.
+
+ $ 1/2 oberon before 19/12/24:0:0:0 - 63.74%
+
+feeling sane again this morning. my initial plan definitely didn't work out. i think i'm going to test out various components in the ~3 days or 20% oberon orbital i have left for this push. which drives me to think that the whole implementation process altogether won't look like what i had planned at all. i wanted to figure out the server aspect during the new year hackathon (i won't be available to code again before then), so at best i'd be putting together the application in the second half of january, a relatively long time from now. i might just code my usual way and do everything at once at a steady, reasonable pace.

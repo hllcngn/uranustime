@@ -1,4 +1,4 @@
-URT24 devlog 1: The Right Idea by hllcngn
+URT25 devlog 1: The Right Idea by hllcngn
 
  $ U[MBRIEL]124 H88:M10:S8
 
@@ -10,7 +10,7 @@ so this first part of the logs is most likely going to be philosophy over anythi
 
 upon listing all the necessary functionalities and actions to take, my first estimate is that i won’t have nearly enough time this December to nail both the coding and the social, even with my super-clock. i should have seen this coming, but my life is continued chaos on Earth, and i still need to visit family, i said i will. i had simply set up a date up on my website (https://d0pec0rp.dev/jupiter-initiative.html) for the first of the year for the official start of the whole JI, which now seems close to impossible to reach.
 
-i need a backup plan. can i make it by feb 1st? let’s see, what’s an interesting orbital conjunction at Uranus coming up? ... of course it seems i’d have to compute this myself. it’s a central part of the project anyway.
+i need a backup plan. can i make it by feb 1st? let’s see, what’s an interesting orbital conjunction at Uranus coming up? ... of course i’d have to compute this myself. it’s a central part of the project anyway.
 
 obviously i could push back all this to 2026, but i don’t like the idea of delaying my plans, of pushing back deadlines as if life opportunities were going to wait patiently for one to catch up, out of breath. so i’ll keep that as a last resort. let’s do the best i can.
 
@@ -20,11 +20,11 @@ registering great progress on the possible developments i could give to the Uran
 
  $ U125 H84:M0:S18
 
-so i just scheduled a codefest in my discord server (https://discord.gg/m9635pfYRD) to start the year actually strong, and i think i won't be able to keep working on the project during those ten days, because i'm already thinking of something else. or it'll be a good time for a second big push to close it - i just like working on something new during hackathons. not sure i should mention i'm still alone in this server, i don't even know if i invited anyone yet, yet i planned a bunch of events, creating more opportunities to get drunk on monster. one-man community accountability. but hopefully when and if you're reading this, you'll be able to join.
+forever alone. so i just scheduled a codefest in my discord server (https://discord.gg/m9635pfYRD) to start the year actually strong, and i think i won't be able to keep working on the project during those ten days, because i'm already thinking of something else. or it'll be a good time for a second big push to close it - i just like working on something new during hackathons. not sure i should mention i'm still alone in this server, i don't even know if i invited anyone yet, yet i planned a bunch of events, creating more opportunities to get drunk on monster. one-man community accountability. but hopefully when and if you're reading this, you'll be able to join.
 
 to be honest, i spent hours today going through all kinds of possible alternatives to Uranus Time in order to make sure my time is well spent, ending up consolidating the concept, because i rather like the idea. it's like ... well it's fun but really it has a nice direction to it imo.
 
-so i guess i'm going to implement it in two rushes. don't get me wrong, i haven't been slacking around, i've been quite productive, planning is an important part of the process - and i'm still working also on my AI science fiction story on the side. next year i should be working on my space opera. no, really, in order to do better, i'd have to turn into a robot myself, selflessly pursuing the ultimate idea to spend my life time on.
+so i guess i'm going to implement it in two rushes. don't get me wrong, i haven't been slacking, i've been quite productive, planning is an important part of the process - and i'm still working also on my AI science fiction story on the side. next year i should be working on my space opera. no, really, in order to do better, i'd have to turn into a robot myself, selflessly pursuing the ultimate idea to spend my life time on.
 
 Uranus Time is not a small investment for me, not anymore at least. i'll start cleaning up the repo before i burst into tears thinking back of how i started using xlib
 
